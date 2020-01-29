@@ -72,7 +72,6 @@ def cli():
                     print("Отель: {}, Cтатус: {}, Cтоимость: {}".format(*hotel))
             else:
                 print("Ничего не найдено :(")
-                continue
 
 
 if __name__ == '__main__':
