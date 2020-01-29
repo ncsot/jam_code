@@ -69,7 +69,7 @@ def cli():
             if lenMatch:
                 print("\nВсего найдено: {}".format(lenMatch))
                 for hotel in listMatch:
-                    print("Отель: {} статус: {} стоимость: {}".format(*hotel))
+                    print("Отель: {}, Cтатус: {}, Cтоимость: {}".format(*hotel))
             else:
                 print("Ничего не найдено :(")
                 continue
