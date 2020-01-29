@@ -51,8 +51,7 @@ def cli():
         try:
             userInput = input("\nВведите стоимость: ")
             if not userInput:
-                print("Вы ввели пустую строку")
-                print("Для выхода нажмите 'q'")
+                print("Вы ввели пустую строку\nДля выхода нажмите 'q'")
                 continue
             elif userInput == "q":
                 raise KeyboardInterrupt
@@ -60,14 +59,12 @@ def cli():
         except ValueError:
             print("Введите стоимость цифрами")
         except KeyboardInterrupt:
-            print("\nДосвидания")
+            print("\nДо свидания")
             break
         else:
             listMatch = matchingSelection(
-                searchMaxIndex(
-                    userInputInt,
-                    hotelList),
-                hotelList)
+                        searchMaxIndex(userInputInt,hotelList),
+                                          hotelList)
             lenMatch = len(listMatch)
             if lenMatch:
                 print("\nВсего найдено: {}".format(lenMatch))
