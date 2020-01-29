@@ -42,6 +42,18 @@ def matchingSelection(ind, dataset, n=3):
         sliceSelect = dataset[ind:ind - n:-1] if (ind >= 3) else dataset[ind::-1]
     return sliceSelect
 
+def main(userInp,dataset):
+    listMatch = matchingSelection(
+                searchMaxIndex(userInp,dataset),
+                                dataset)
+    lenMatch = len(listMatch)
+    if lenMatch:
+        print("\nВсего найдено: {}".format(lenMatch))
+        for hotel in listMatch:
+            print("Отель: {}, Cтатус: {}, Cтоимость: {}".format(*hotel))
+    else:
+        print("Ничего не найдено :(")
+
 
 def cli():
     # интерфейс пользователя
@@ -62,16 +74,7 @@ def cli():
             print("\nДо свидания")
             break
         else:
-            listMatch = matchingSelection(
-                        searchMaxIndex(userInputInt,hotelList),
-                                          hotelList)
-            lenMatch = len(listMatch)
-            if lenMatch:
-                print("\nВсего найдено: {}".format(lenMatch))
-                for hotel in listMatch:
-                    print("Отель: {}, Cтатус: {}, Cтоимость: {}".format(*hotel))
-            else:
-                print("Ничего не найдено :(")
+            main(userInputInt,hotelList)
 
 
 if __name__ == '__main__':
